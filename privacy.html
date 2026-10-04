@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EZ File Server — Privacy Policy</title>
+<title>EZ File Server Privacy Policy</title>
 <meta name="description" content="Privacy policy of EZ File Server for Meta Quest. The app collects no personal data.">
 <link rel="icon" href="assets/icon_app_180.png">
 <link rel="stylesheet" href="style.css">
@@ -22,58 +22,76 @@
   <p class="updated">Last updated: 4 October 2026 · Anwar Studio Official</p>
 
   <div class="summary">
-    <p><strong>The short version.</strong> EZ File Server does not collect, transmit or store any personal data. We run no servers and receive nothing from your headset.</p>
-    <p>When you start the file server, other devices on <strong>your own local network</strong> can reach the folder you chose. Files go directly between your devices — never through us or any cloud service.</p>
+    <p><strong>The short version.</strong> EZ File Server has no servers of its own. We do not collect, transmit or store any of your data, and we receive nothing from your headset.</p>
+    <p>There is no analytics, no telemetry, no advertising and no account to create. When you start the file server, only devices on <strong>your own local network</strong> can reach the folder you chose. Files go directly between your devices, never through us or any cloud service.</p>
   </div>
 
   <h2>1. Who we are</h2>
-  <p>EZ File Server ("the app") is developed by <strong>Anwar Studio Official</strong>. Questions about this policy or your privacy: <a href="mailto:psopala93@gmail.com">psopala93@gmail.com</a>.</p>
+  <p>EZ File Server ("the app") is developed by <strong>Anwar Studio Official</strong>. Questions about this policy or about your privacy go to <a href="mailto:psopala93@gmail.com">psopala93@gmail.com</a>, and a real person reads them.</p>
 
   <h2>2. What we collect</h2>
-  <p><strong>Nothing.</strong> The app has no backend, no database, no user accounts, no analytics, no crash reporting, no advertising and no tracking of any kind. We do not receive your files, your file names, your IP address or any usage information.</p>
+  <p><strong>Nothing.</strong> The app works entirely on your devices. We run no backend and have no database. We receive no data from the app: not your files, not their names, not your IP address, not usage statistics, not crash reports and not an identifier of any kind.</p>
 
-  <h2>3. How the file server works</h2>
-  <p>The app's purpose is to run a file server on your headset (HTTP, WebDAV or FTP) so that your other devices can transfer files to and from it.</p>
+  <h2>3. What stays on your headset</h2>
+  <p>The app does not save anything about you. Your settings (server type, port, shared folder, username and password) are kept in memory only while the app runs and are not written to storage. The only files the app creates are the ones you ask for:</p>
   <ul>
-    <li>The server runs only while you have started it, and stops when you press <strong>Stop Server</strong> or close the app.</li>
+    <li>files that your other devices upload to the folder you share;</li>
+    <li>a QR code image, if you press <strong>Save to Downloads</strong>;</li>
+    <li>a small hidden folder (<code>.qf_upload_tmp</code>) that the HTTP server creates inside the shared folder to assemble large uploads while they arrive.</li>
+  </ul>
+  <p>While a transfer runs, the app shows its file name, size, speed and progress on screen. This information stays on the headset and disappears shortly after the transfer ends.</p>
+
+  <h2>4. Files on your device</h2>
+  <p>The app requests access to all files because that is what a file server does: it has to read the files your other devices download and save the files they upload. It reads and writes files only when a device you connected asks for it. It never scans your files for content, never indexes them and never sends them anywhere except to the device that requested them.</p>
+
+  <h2>5. How the file server works</h2>
+  <p>The app runs a file server on your headset (HTTP, WebDAV or FTP) so that your other devices can transfer files to and from it.</p>
+  <ul>
+    <li>The server runs only after you press <strong>Start Server</strong>. It stops when you press <strong>Stop Server</strong>, press <strong>Exit</strong> or close the app window. If you only switch to another app, it keeps running until you stop it.</li>
     <li>It listens on your <strong>local network</strong>. Anyone on that network who knows the address can reach the shared folder unless you turn on <strong>Require authentication</strong>.</li>
-    <li>HTTP, WebDAV and FTP are <strong>not encrypted</strong>. Use the server on a network you trust, such as your home Wi-Fi, and enable a password if other people share that network.</li>
-    <li>The username and password you enter are kept in memory only while the app runs. They are not saved to disk and are never sent anywhere except as the login check performed by the server on your headset.</li>
-    <li>While a transfer runs, the app shows its file name, size, speed and progress on screen. This information stays on the headset and is discarded shortly after the transfer ends.</li>
+    <li>HTTP, WebDAV and FTP are <strong>not encrypted</strong>. That is a property of these protocols, not of the app. Use the server on a network you trust, such as your home Wi-Fi, and turn on a password if other people share that network.</li>
+    <li>The username and password you enter are used only by the server on your headset to check logins. They are never sent to us or to anyone else.</li>
+    <li>The app does not contact any internet service. It only answers connections from devices on your local network.</li>
   </ul>
 
-  <h2>4. Permissions</h2>
+  <h2>6. Permissions, in plain terms</h2>
   <div class="table-scroll">
   <table>
-    <tr><th>Permission</th><th>Why the app needs it</th></tr>
-    <tr><td><strong>All files access</strong></td><td>To share the folder you choose (by default the headset's main storage) with your other devices and to save the files they upload.</td></tr>
-    <tr><td><strong>Internet</strong></td><td>Required by Android to open the server's network socket on your local network. The app does not contact any internet service.</td></tr>
-    <tr><td><strong>Network state</strong></td><td>To read the headset's local IP address and show it as the connection address and QR code.</td></tr>
+    <tr><th>Permission</th><th>What it is for</th></tr>
+    <tr><td><strong>All files access</strong></td><td>Sharing the folder you choose (by default the headset's main storage) with your other devices and saving the files they upload. This is the app's core function.</td></tr>
+    <tr><td><strong>Internet</strong></td><td>Required by Android to open the server's network port on your local network.</td></tr>
+    <tr><td><strong>Network state</strong></td><td>Reading the headset's local IP address to show it as the connection address and QR code.</td></tr>
   </table>
   </div>
 
-  <h2>5. QR codes</h2>
-  <p>The QR code only contains the server's local address (for example <code>http://192.168.1.50:8080</code>). If you choose <strong>Save to Downloads</strong>, it is saved as an image in your headset's Downloads folder. If you choose <strong>Share QR code</strong>, it is handed to the app you pick in the Android share sheet. Nothing is sent to us.</p>
+  <h2>7. QR codes</h2>
+  <p>The QR code contains only the server's local address (for example <code>http://192.168.1.50:8080</code>). If you press <strong>Save to Downloads</strong>, it is saved as an image in your headset's Downloads folder. If you press <strong>Share QR code</strong>, it is handed to the app you pick in the Android share sheet. Nothing is sent to us.</p>
 
-  <h2>6. Third parties</h2>
-  <p>The app contains no third-party analytics, advertising or tracking SDKs. Your use of the Meta Horizon Store and Meta Quest is governed by Meta's own privacy policy.</p>
+  <h2>8. Sensors and camera</h2>
+  <p>The app does not use the cameras, the microphone, hand tracking data, eye tracking data or any other sensor beyond what the system needs to show a 2D panel and accept your input.</p>
 
-  <h2>7. Children</h2>
-  <p>The app collects no data from anyone, including children.</p>
+  <h2>9. Third parties</h2>
+  <p>The app contains no third party analytics, advertising or tracking software.</p>
 
-  <h2>8. Your rights</h2>
-  <p>Because we hold no data about you, there is nothing to access, correct, export or delete on our side. Uninstalling the app removes everything it stored on the headset, except files you saved yourself (such as a QR code in Downloads or files uploaded to your shared folder).</p>
+  <h2>10. Children</h2>
+  <p>EZ File Server is a utility, is not directed at children, and collects no data from anyone, children included.</p>
 
-  <h2>9. Changes</h2>
-  <p>If this policy changes, the new version will be published on this page with a new "Last updated" date.</p>
+  <h2>11. The platform</h2>
+  <p>EZ File Server is distributed through the Meta Horizon Store. Meta's own handling of your data is governed by the <a href="https://www.meta.com/legal/privacy-policy/">Meta Privacy Policy</a> and is outside our control. We receive nothing from Meta beyond anonymous, aggregate store statistics.</p>
 
-  <h2>10. Contact</h2>
-  <p>Anwar Studio Official — <a href="mailto:psopala93@gmail.com">psopala93@gmail.com</a> · Support: <a href="https://discord.gg/hf25pdr9BH">Discord</a></p>
+  <h2>12. Your rights and data deletion</h2>
+  <p>Since we hold no data about you, there is nothing for us to access, correct, export or delete. Files in your shared storage, such as uploads, a saved QR code or the hidden <code>.qf_upload_tmp</code> folder, stay where they are after you uninstall the app, until you delete them.</p>
+
+  <h2>13. Changes to this policy</h2>
+  <p>If this policy changes, the date at the top changes with it, and a material change will be noted in the app's release notes. Since we collect nothing, changes should be rare.</p>
+
+  <h2>14. Contact</h2>
+  <p>Anwar Studio Official<br><a href="mailto:psopala93@gmail.com">psopala93@gmail.com</a><br>Support: <a href="https://discord.gg/hf25pdr9BH">Discord</a></p>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Anwar Studio Official</span>
+    <span>© 2026 Anwar Studio Official. All rights reserved. EZ File Server is not affiliated with Meta.</span>
     <span><a href="index.html">Home</a> · <a href="mailto:psopala93@gmail.com">psopala93@gmail.com</a></span>
   </div>
 </footer>
